@@ -3,7 +3,13 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-import joblib, os, json, warnings
+import joblib, os, json, warnings, urllib.request
+
+CSV_URL = "https://raw.githubusercontent.com/Kushagra0210/aqi-predictor/main/city_day.csv"
+if not os.path.exists("city_day.csv"):
+    print("Downloading city_day.csv from GitHub...")
+    urllib.request.urlretrieve(CSV_URL, "city_day.csv")
+    print("Dataset ready.")
 warnings.filterwarnings('ignore')
 
 from sklearn.model_selection import train_test_split
@@ -133,10 +139,6 @@ with st.sidebar:
                           "📈 EDA & Plots", "📋 Report"], label_visibility="collapsed")
 
 # ── LOAD DATA ────────────────────────────────────────────
-if not os.path.exists(data_file):
-    st.error(f"Dataset not found at **{data_file}**. "
-             f"Copy `city_day.csv` from your pen drive to the same folder as `app.py` and restart.")
-    st.stop()
 
 with st.spinner("Loading data and training models (first run only)…"):
     df, models, results, features, pollutants, le = load_or_train(data_file)
