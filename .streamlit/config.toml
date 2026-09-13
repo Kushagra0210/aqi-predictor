@@ -1,0 +1,25 @@
+[theme]
+base = "light"
+primaryColor = "#315EFB"
+backgroundColor = "#F7F5EF"
+secondaryBackgroundColor = "#ECE9E1"
+textColor = "#20211F"
+linkColor = "#315EFB"
+borderColor = "#CBC7BC"
+showWidgetBorder = true
+showSidebarBorder = true
+baseRadius = "small"
+buttonRadius = "small"
+font = "Manrope:https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap"
+codeFont = "IBM Plex Mono:https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap"
+
+[theme.sidebar]
+backgroundColor = "#ECE9E1"
+secondaryBackgroundColor = "#E2DED5"
+borderColor = "#CBC7BC"
+
+[server]
+headless = true
+
+[browser]
+gatherUsageStats = false
